@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using DTO;
 
 namespace DAL
 {
@@ -30,7 +31,7 @@ namespace DAL
             return dataTable;
         }
 
-        public string AddSanPham(string maSP, string tenSP, int giaSP, int soLuong)
+        public string AddSanPham(SanPham_DTO sanPham,string maSP, string tenSP, int giaSP, int soLuong)
         {
             try
             {

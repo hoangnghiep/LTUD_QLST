@@ -1,0 +1,13 @@
+D:\HoangNghiep\Tai lieu\Nam3\LAPTRINHUNGDUNG\LTUD_QLST\QuanLySieuThi\GUI_QLST\bin\Debug\GUI_QLST.exe.config
+D:\HoangNghiep\Tai lieu\Nam3\LAPTRINHUNGDUNG\LTUD_QLST\QuanLySieuThi\GUI_QLST\bin\Debug\GUI_QLST.exe
+D:\HoangNghiep\Tai lieu\Nam3\LAPTRINHUNGDUNG\LTUD_QLST\QuanLySieuThi\GUI_QLST\bin\Debug\GUI_QLST.pdb
+D:\HoangNghiep\Tai lieu\Nam3\LAPTRINHUNGDUNG\LTUD_QLST\QuanLySieuThi\GUI_QLST\obj\Debug\GUI_QLST.csprojAssemblyReference.cache
+D:\HoangNghiep\Tai lieu\Nam3\LAPTRINHUNGDUNG\LTUD_QLST\QuanLySieuThi\GUI_QLST\obj\Debug\GUI_QLST.frmHangHoa.resources
+D:\HoangNghiep\Tai lieu\Nam3\LAPTRINHUNGDUNG\LTUD_QLST\QuanLySieuThi\GUI_QLST\obj\Debug\GUI_QLST.frmMain.resources
+D:\HoangNghiep\Tai lieu\Nam3\LAPTRINHUNGDUNG\LTUD_QLST\QuanLySieuThi\GUI_QLST\obj\Debug\GUI_QLST.Properties.Resources.resources
+D:\HoangNghiep\Tai lieu\Nam3\LAPTRINHUNGDUNG\LTUD_QLST\QuanLySieuThi\GUI_QLST\obj\Debug\GUI_QLST.csproj.GenerateResource.cache
+D:\HoangNghiep\Tai lieu\Nam3\LAPTRINHUNGDUNG\LTUD_QLST\QuanLySieuThi\GUI_QLST\obj\Debug\GUI_QLST.csproj.CoreCompileInputs.cache
+D:\HoangNghiep\Tai lieu\Nam3\LAPTRINHUNGDUNG\LTUD_QLST\QuanLySieuThi\GUI_QLST\obj\Debug\GUI_QLST.exe
+D:\HoangNghiep\Tai lieu\Nam3\LAPTRINHUNGDUNG\LTUD_QLST\QuanLySieuThi\GUI_QLST\obj\Debug\GUI_QLST.pdb
+D:\HoangNghiep\Tai lieu\Nam3\LAPTRINHUNGDUNG\LTUD_QLST\QuanLySieuThi\GUI_QLST\obj\Debug\GUI_QLST.frmKhachHang.resources
+D:\HoangNghiep\Tai lieu\Nam3\LAPTRINHUNGDUNG\LTUD_QLST\QuanLySieuThi\GUI_QLST\obj\Debug\GUI_QLST.frmNhanVien.resources

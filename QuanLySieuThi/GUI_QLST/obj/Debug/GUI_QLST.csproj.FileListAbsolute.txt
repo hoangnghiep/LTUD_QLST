@@ -11,3 +11,10 @@ D:\HoangNghiep\Tai lieu\Nam3\LAPTRINHUNGDUNG\LTUD_QLST\QuanLySieuThi\GUI_QLST\ob
 D:\HoangNghiep\Tai lieu\Nam3\LAPTRINHUNGDUNG\LTUD_QLST\QuanLySieuThi\GUI_QLST\obj\Debug\GUI_QLST.pdb
 D:\HoangNghiep\Tai lieu\Nam3\LAPTRINHUNGDUNG\LTUD_QLST\QuanLySieuThi\GUI_QLST\obj\Debug\GUI_QLST.frmKhachHang.resources
 D:\HoangNghiep\Tai lieu\Nam3\LAPTRINHUNGDUNG\LTUD_QLST\QuanLySieuThi\GUI_QLST\obj\Debug\GUI_QLST.frmNhanVien.resources
+D:\HoangNghiep\Tai lieu\Nam3\LAPTRINHUNGDUNG\LTUD_QLST\QuanLySieuThi\GUI_QLST\bin\Debug\BUS.dll
+D:\HoangNghiep\Tai lieu\Nam3\LAPTRINHUNGDUNG\LTUD_QLST\QuanLySieuThi\GUI_QLST\bin\Debug\DTO.dll
+D:\HoangNghiep\Tai lieu\Nam3\LAPTRINHUNGDUNG\LTUD_QLST\QuanLySieuThi\GUI_QLST\bin\Debug\DAL.dll
+D:\HoangNghiep\Tai lieu\Nam3\LAPTRINHUNGDUNG\LTUD_QLST\QuanLySieuThi\GUI_QLST\bin\Debug\BUS.pdb
+D:\HoangNghiep\Tai lieu\Nam3\LAPTRINHUNGDUNG\LTUD_QLST\QuanLySieuThi\GUI_QLST\bin\Debug\DTO.pdb
+D:\HoangNghiep\Tai lieu\Nam3\LAPTRINHUNGDUNG\LTUD_QLST\QuanLySieuThi\GUI_QLST\bin\Debug\DAL.pdb
+D:\HoangNghiep\Tai lieu\Nam3\LAPTRINHUNGDUNG\LTUD_QLST\QuanLySieuThi\GUI_QLST\obj\Debug\GUI_QLST.csproj.CopyComplete

@@ -5,10 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using DTO;
 
 namespace DAL
 {
-    class KhachHang_DAL:ConnectDB
+    public class KhachHang_DAL :ConnectDB
     {
         public DataTable GetAllKhachHang()
         {
@@ -31,16 +32,16 @@ namespace DAL
             return dataTable;
         }
 
-        public string AddKhachHang(string hoTen, string gioiTinh, string diaChi, string soDT)
+        public string AddKhachHang(KhachHang_ET khachHang)
         {
             try
             {
                 SqlCommand cmd = new SqlCommand("SP_KhachHang_Add", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@hoten", hoTen);
-                cmd.Parameters.AddWithValue("@gioitinh", gioiTinh);
-                cmd.Parameters.AddWithValue("@diachi", diaChi);
-                cmd.Parameters.AddWithValue("@sdt", soDT);
+                cmd.Parameters.AddWithValue("@hoten", khachHang.HoTen);
+                cmd.Parameters.AddWithValue("@gioitinh", khachHang.GioiTinh);
+                cmd.Parameters.AddWithValue("@diachi", khachHang.DiaChi);
+                cmd.Parameters.AddWithValue("@sdt", khachHang.SDT);
 
                 if (cmd.ExecuteNonQuery() > 0)
                 {
@@ -57,17 +58,17 @@ namespace DAL
             }
         }
 
-        public string UpdateKhachHang(int id, string hoTen, string gioiTinh, string diaChi, string soDT)
+        public string UpdateKhachHang(KhachHang_ET khachHang)
         {
             try
             {
                 SqlCommand cmd = new SqlCommand("SP_KhachHang_Update", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@id", id);
-                cmd.Parameters.AddWithValue("@hoten", hoTen);
-                cmd.Parameters.AddWithValue("@gioitinh", gioiTinh);
-                cmd.Parameters.AddWithValue("@diachi", diaChi);
-                cmd.Parameters.AddWithValue("@sdt", soDT);
+                cmd.Parameters.AddWithValue("@id", khachHang.ID);
+                cmd.Parameters.AddWithValue("@hoten", khachHang.HoTen);
+                cmd.Parameters.AddWithValue("@gioitinh", khachHang.GioiTinh);
+                cmd.Parameters.AddWithValue("@diachi", khachHang.DiaChi);
+                cmd.Parameters.AddWithValue("@sdt", khachHang.SDT);
 
                 if (cmd.ExecuteNonQuery() > 0)
                 {
@@ -84,13 +85,13 @@ namespace DAL
             }
         }
 
-        public string DeleteKhachHang(int id)
+        public string DeleteKhachHang(KhachHang_ET khachHang)
         {
             try
             {
                 SqlCommand cmd = new SqlCommand("SP_KhachHang_Delete", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@id", id);
+                cmd.Parameters.AddWithValue("@id", khachHang.ID);
 
                 if (cmd.ExecuteNonQuery() > 0)
                 {

@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.grbThongTin = new System.Windows.Forms.GroupBox();
+            this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
+            this.lblNgaySinh = new System.Windows.Forms.Label();
             this.lblSDT = new System.Windows.Forms.Label();
             this.lblDiaChi = new System.Windows.Forms.Label();
             this.lblGioiTinh = new System.Windows.Forms.Label();
@@ -45,8 +47,6 @@
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
-            this.lblNgaySinh = new System.Windows.Forms.Label();
-            this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colHoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colGioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -78,6 +78,23 @@
             this.grbThongTin.TabIndex = 1;
             this.grbThongTin.TabStop = false;
             this.grbThongTin.Text = "Thông tin khách hàng";
+            // 
+            // dtpNgaySinh
+            // 
+            this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgaySinh.Location = new System.Drawing.Point(124, 155);
+            this.dtpNgaySinh.Name = "dtpNgaySinh";
+            this.dtpNgaySinh.Size = new System.Drawing.Size(183, 20);
+            this.dtpNgaySinh.TabIndex = 4;
+            // 
+            // lblNgaySinh
+            // 
+            this.lblNgaySinh.AutoSize = true;
+            this.lblNgaySinh.Location = new System.Drawing.Point(32, 157);
+            this.lblNgaySinh.Name = "lblNgaySinh";
+            this.lblNgaySinh.Size = new System.Drawing.Size(54, 13);
+            this.lblNgaySinh.TabIndex = 3;
+            this.lblNgaySinh.Text = "Ngày sinh";
             // 
             // lblSDT
             // 
@@ -120,7 +137,7 @@
             this.rabNu.AutoSize = true;
             this.rabNu.Location = new System.Drawing.Point(199, 67);
             this.rabNu.Name = "rabNu";
-            this.rabNu.Size = new System.Drawing.Size(39, 17);
+            this.rabNu.Size = new System.Drawing.Size(46, 20);
             this.rabNu.TabIndex = 1;
             this.rabNu.TabStop = true;
             this.rabNu.Text = "Nữ";
@@ -131,7 +148,7 @@
             this.rabNam.AutoSize = true;
             this.rabNam.Location = new System.Drawing.Point(130, 67);
             this.rabNam.Name = "rabNam";
-            this.rabNam.Size = new System.Drawing.Size(47, 17);
+            this.rabNam.Size = new System.Drawing.Size(54, 20);
             this.rabNam.TabIndex = 1;
             this.rabNam.TabStop = true;
             this.rabNam.Text = "Nam";
@@ -236,26 +253,10 @@
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
             // 
-            // lblNgaySinh
-            // 
-            this.lblNgaySinh.AutoSize = true;
-            this.lblNgaySinh.Location = new System.Drawing.Point(32, 157);
-            this.lblNgaySinh.Name = "lblNgaySinh";
-            this.lblNgaySinh.Size = new System.Drawing.Size(54, 13);
-            this.lblNgaySinh.TabIndex = 3;
-            this.lblNgaySinh.Text = "Ngày sinh";
-            // 
-            // dtpNgaySinh
-            // 
-            this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgaySinh.Location = new System.Drawing.Point(124, 155);
-            this.dtpNgaySinh.Name = "dtpNgaySinh";
-            this.dtpNgaySinh.Size = new System.Drawing.Size(183, 20);
-            this.dtpNgaySinh.TabIndex = 4;
-            // 
             // colID
             // 
             this.colID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.colID.DataPropertyName = "ID";
             this.colID.FillWeight = 152.2843F;
             this.colID.HeaderText = "ID";
             this.colID.Name = "colID";
@@ -264,6 +265,7 @@
             // colHoTen
             // 
             this.colHoTen.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colHoTen.DataPropertyName = "TenNV";
             this.colHoTen.FillWeight = 89.54314F;
             this.colHoTen.HeaderText = "Họ Tên";
             this.colHoTen.Name = "colHoTen";
@@ -271,6 +273,7 @@
             // colGioiTinh
             // 
             this.colGioiTinh.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colGioiTinh.DataPropertyName = "GioiTinhNV";
             this.colGioiTinh.FillWeight = 89.54314F;
             this.colGioiTinh.HeaderText = "Giới Tính";
             this.colGioiTinh.Name = "colGioiTinh";
@@ -278,6 +281,7 @@
             // colDiaChi
             // 
             this.colDiaChi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colDiaChi.DataPropertyName = "DiaChiNV";
             this.colDiaChi.FillWeight = 89.54314F;
             this.colDiaChi.HeaderText = "Địa Chỉ";
             this.colDiaChi.Name = "colDiaChi";
@@ -285,6 +289,7 @@
             // colSDT
             // 
             this.colSDT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colSDT.DataPropertyName = "SDT";
             this.colSDT.FillWeight = 89.54314F;
             this.colSDT.HeaderText = "Số Điện Thoại";
             this.colSDT.Name = "colSDT";
@@ -292,6 +297,7 @@
             // colNgaySinh
             // 
             this.colNgaySinh.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colNgaySinh.DataPropertyName = "NgaySinh";
             this.colNgaySinh.FillWeight = 89.54314F;
             this.colNgaySinh.HeaderText = "Ngày Sinh";
             this.colNgaySinh.Name = "colNgaySinh";

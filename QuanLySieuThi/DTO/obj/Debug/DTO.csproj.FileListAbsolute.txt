@@ -1,0 +1,6 @@
+D:\HoangNghiep\Tai lieu\Nam3\LAPTRINHUNGDUNG\LTUD_QLST\QuanLySieuThi\DTO\bin\Debug\DTO.dll
+D:\HoangNghiep\Tai lieu\Nam3\LAPTRINHUNGDUNG\LTUD_QLST\QuanLySieuThi\DTO\bin\Debug\DTO.pdb
+D:\HoangNghiep\Tai lieu\Nam3\LAPTRINHUNGDUNG\LTUD_QLST\QuanLySieuThi\DTO\obj\Debug\DTO.csprojAssemblyReference.cache
+D:\HoangNghiep\Tai lieu\Nam3\LAPTRINHUNGDUNG\LTUD_QLST\QuanLySieuThi\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+D:\HoangNghiep\Tai lieu\Nam3\LAPTRINHUNGDUNG\LTUD_QLST\QuanLySieuThi\DTO\obj\Debug\DTO.dll
+D:\HoangNghiep\Tai lieu\Nam3\LAPTRINHUNGDUNG\LTUD_QLST\QuanLySieuThi\DTO\obj\Debug\DTO.pdb

@@ -5,10 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using DTO;
 
 namespace DAL
 {
-    class HoaDon_DAL:ConnectDB
+    public class HoaDon_DAL :ConnectDB
     {
         public DataTable GetAllHoaDon()
         {
@@ -31,15 +32,15 @@ namespace DAL
             return dataTable;
         }
 
-        public string AddHoaDon(int idKH, int idNV, DateTime ngayLap)
+        public string AddHoaDon(HoaDon_ET hoaDon)
         {
             try
             {
                 SqlCommand cmd = new SqlCommand("SP_HoaDon_Add", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@id_kh", idKH);
-                cmd.Parameters.AddWithValue("@id_nv", idNV);
-                cmd.Parameters.AddWithValue("@ngaylap", ngayLap);
+                cmd.Parameters.AddWithValue("@id_kh", hoaDon.ID_KhachHang);
+                cmd.Parameters.AddWithValue("@id_nv", hoaDon.ID_NhanVien);
+                cmd.Parameters.AddWithValue("@ngaylap", hoaDon.NgayLap);
 
                 if (cmd.ExecuteNonQuery() > 0)
                 {
@@ -56,16 +57,16 @@ namespace DAL
             }
         }
 
-        public string UpdateHoaDon(int id, int idKH, int idNV, DateTime ngayLap)
+        public string UpdateHoaDon(HoaDon_ET hoaDon)
         {
             try
             {
                 SqlCommand cmd = new SqlCommand("SP_HoaDon_Update", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@id", id);
-                cmd.Parameters.AddWithValue("@id_kh", idKH);
-                cmd.Parameters.AddWithValue("@id_nv", idNV);
-                cmd.Parameters.AddWithValue("@ngaylap", ngayLap);
+                cmd.Parameters.AddWithValue("@id", hoaDon.ID);
+                cmd.Parameters.AddWithValue("@id_kh", hoaDon.ID_KhachHang);
+                cmd.Parameters.AddWithValue("@id_nv", hoaDon.ID_NhanVien);
+                cmd.Parameters.AddWithValue("@ngaylap", hoaDon.NgayLap);
 
                 if (cmd.ExecuteNonQuery() > 0)
                 {
@@ -82,13 +83,13 @@ namespace DAL
             }
         }
 
-        public string DeleteHoaDon(int id)
+        public string DeleteHoaDon(HoaDon_ET hoaDon)
         {
             try
             {
                 SqlCommand cmd = new SqlCommand("SP_HoaDon_Delete", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@id", id);
+                cmd.Parameters.AddWithValue("@id", hoaDon.ID);
 
                 if (cmd.ExecuteNonQuery() > 0)
                 {

@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    class SanPham_ET
+    public class SanPham_ET
     {
+        private int _ID;
         private string _MaSP;
         private string _TenSP;
         private int _GiaSP;
@@ -17,8 +18,17 @@ namespace DTO
         public string TenSP { get => _TenSP; set => _TenSP = value; }
         public int GiaSP { get => _GiaSP; set => _GiaSP = value; }
         public int SoLuong { get => _SoLuong; set => _SoLuong = value; }
+        public int ID { get => _ID; set => _ID = value; }
 
-        public SanPham_ET(string maSP, string tenSP, int giaSP, int soLuong) {
+        public SanPham_ET(int id,string maSP, string tenSP, int giaSP, int soLuong) {
+            this.ID = id;
+            this.MaSP = maSP;
+            this.TenSP = tenSP;
+            this.GiaSP = giaSP;
+            this.SoLuong = soLuong;
+        }
+        public SanPham_ET(string maSP, string tenSP, int giaSP, int soLuong)
+        {
             this.MaSP = maSP;
             this.TenSP = tenSP;
             this.GiaSP = giaSP;

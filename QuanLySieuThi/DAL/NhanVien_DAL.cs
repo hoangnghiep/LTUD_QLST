@@ -5,10 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using DTO;
 
 namespace DAL
 {
-    class NhanVien_DAL:ConnectDB
+    public class NhanVien_DAL :ConnectDB
     {
         public DataTable GetAllNhanVien()
         {
@@ -31,17 +32,17 @@ namespace DAL
             return dataTable;
         }
 
-        public string AddNhanVien(string hoTen, string gioiTinh, string diaChi, string soDT, DateTime ngaySinh)
+        public string AddNhanVien(NhanVien_ET nhanVien)
         {
             try
             {
                 SqlCommand cmd = new SqlCommand("SP_NhanVien_Add", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@hoten", hoTen);
-                cmd.Parameters.AddWithValue("@gioitinh", gioiTinh);
-                cmd.Parameters.AddWithValue("@diachi", diaChi);
-                cmd.Parameters.AddWithValue("@sdt", soDT);
-                cmd.Parameters.AddWithValue("@ngaysinh", ngaySinh);
+                cmd.Parameters.AddWithValue("@hoten", nhanVien.HoTen);
+                cmd.Parameters.AddWithValue("@gioitinh", nhanVien.GioiTinh);
+                cmd.Parameters.AddWithValue("@diachi", nhanVien.DiaChi);
+                cmd.Parameters.AddWithValue("@sdt", nhanVien.SDT);
+                cmd.Parameters.AddWithValue("@ngaysinh", nhanVien.NgaySinh);
 
                 if (cmd.ExecuteNonQuery() > 0)
                 {
@@ -58,18 +59,18 @@ namespace DAL
             }
         }
 
-        public string UpdateNhanVien(int id, string hoTen, string gioiTinh, string diaChi, string soDT, DateTime ngaySinh)
+        public string UpdateNhanVien(NhanVien_ET nhanVien)
         {
             try
             {
                 SqlCommand cmd = new SqlCommand("SP_NhanVien_Update", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@id", id);
-                cmd.Parameters.AddWithValue("@hoten", hoTen);
-                cmd.Parameters.AddWithValue("@gioitinh", gioiTinh);
-                cmd.Parameters.AddWithValue("@diachi", diaChi);
-                cmd.Parameters.AddWithValue("@sdt", soDT);
-                cmd.Parameters.AddWithValue("@ngaysinh", ngaySinh);
+                cmd.Parameters.AddWithValue("@id", nhanVien.ID);
+                cmd.Parameters.AddWithValue("@hoten", nhanVien.HoTen);
+                cmd.Parameters.AddWithValue("@gioitinh", nhanVien.GioiTinh);
+                cmd.Parameters.AddWithValue("@diachi", nhanVien.DiaChi);
+                cmd.Parameters.AddWithValue("@sdt", nhanVien.SDT);
+                cmd.Parameters.AddWithValue("@ngaysinh", nhanVien.NgaySinh);
 
                 if (cmd.ExecuteNonQuery() > 0)
                 {
@@ -86,13 +87,13 @@ namespace DAL
             }
         }
 
-        public string DeleteNhanVien(int id)
+        public string DeleteNhanVien(NhanVien_ET nhanVien)
         {
             try
             {
                 SqlCommand cmd = new SqlCommand("SP_NhanVien_Delete", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@id", id);
+                cmd.Parameters.AddWithValue("@id", nhanVien.ID);
 
                 if (cmd.ExecuteNonQuery() > 0)
                 {

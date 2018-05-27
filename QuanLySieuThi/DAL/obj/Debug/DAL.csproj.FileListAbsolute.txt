@@ -1,0 +1,9 @@
+D:\HoangNghiep\Tai lieu\Nam3\LAPTRINHUNGDUNG\LTUD_QLST\QuanLySieuThi\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+D:\HoangNghiep\Tai lieu\Nam3\LAPTRINHUNGDUNG\LTUD_QLST\QuanLySieuThi\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\HoangNghiep\Tai lieu\Nam3\LAPTRINHUNGDUNG\LTUD_QLST\QuanLySieuThi\DAL\bin\Debug\DAL.dll
+D:\HoangNghiep\Tai lieu\Nam3\LAPTRINHUNGDUNG\LTUD_QLST\QuanLySieuThi\DAL\bin\Debug\DAL.pdb
+D:\HoangNghiep\Tai lieu\Nam3\LAPTRINHUNGDUNG\LTUD_QLST\QuanLySieuThi\DAL\bin\Debug\DTO.dll
+D:\HoangNghiep\Tai lieu\Nam3\LAPTRINHUNGDUNG\LTUD_QLST\QuanLySieuThi\DAL\bin\Debug\DTO.pdb
+D:\HoangNghiep\Tai lieu\Nam3\LAPTRINHUNGDUNG\LTUD_QLST\QuanLySieuThi\DAL\obj\Debug\DAL.csproj.CopyComplete
+D:\HoangNghiep\Tai lieu\Nam3\LAPTRINHUNGDUNG\LTUD_QLST\QuanLySieuThi\DAL\obj\Debug\DAL.dll
+D:\HoangNghiep\Tai lieu\Nam3\LAPTRINHUNGDUNG\LTUD_QLST\QuanLySieuThi\DAL\obj\Debug\DAL.pdb

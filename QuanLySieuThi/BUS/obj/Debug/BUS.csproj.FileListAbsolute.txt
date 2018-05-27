@@ -1,0 +1,11 @@
+D:\HoangNghiep\Tai lieu\Nam3\LAPTRINHUNGDUNG\LTUD_QLST\QuanLySieuThi\BUS\obj\Debug\BUS.csprojAssemblyReference.cache
+D:\HoangNghiep\Tai lieu\Nam3\LAPTRINHUNGDUNG\LTUD_QLST\QuanLySieuThi\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
+D:\HoangNghiep\Tai lieu\Nam3\LAPTRINHUNGDUNG\LTUD_QLST\QuanLySieuThi\BUS\bin\Debug\BUS.dll
+D:\HoangNghiep\Tai lieu\Nam3\LAPTRINHUNGDUNG\LTUD_QLST\QuanLySieuThi\BUS\bin\Debug\BUS.pdb
+D:\HoangNghiep\Tai lieu\Nam3\LAPTRINHUNGDUNG\LTUD_QLST\QuanLySieuThi\BUS\bin\Debug\DAL.dll
+D:\HoangNghiep\Tai lieu\Nam3\LAPTRINHUNGDUNG\LTUD_QLST\QuanLySieuThi\BUS\bin\Debug\DTO.dll
+D:\HoangNghiep\Tai lieu\Nam3\LAPTRINHUNGDUNG\LTUD_QLST\QuanLySieuThi\BUS\bin\Debug\DAL.pdb
+D:\HoangNghiep\Tai lieu\Nam3\LAPTRINHUNGDUNG\LTUD_QLST\QuanLySieuThi\BUS\bin\Debug\DTO.pdb
+D:\HoangNghiep\Tai lieu\Nam3\LAPTRINHUNGDUNG\LTUD_QLST\QuanLySieuThi\BUS\obj\Debug\BUS.csproj.CopyComplete
+D:\HoangNghiep\Tai lieu\Nam3\LAPTRINHUNGDUNG\LTUD_QLST\QuanLySieuThi\BUS\obj\Debug\BUS.dll
+D:\HoangNghiep\Tai lieu\Nam3\LAPTRINHUNGDUNG\LTUD_QLST\QuanLySieuThi\BUS\obj\Debug\BUS.pdb

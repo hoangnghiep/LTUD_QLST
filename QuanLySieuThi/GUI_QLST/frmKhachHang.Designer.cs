@@ -115,7 +115,7 @@
             this.rabNu.AutoSize = true;
             this.rabNu.Location = new System.Drawing.Point(199, 76);
             this.rabNu.Name = "rabNu";
-            this.rabNu.Size = new System.Drawing.Size(39, 17);
+            this.rabNu.Size = new System.Drawing.Size(46, 20);
             this.rabNu.TabIndex = 1;
             this.rabNu.TabStop = true;
             this.rabNu.Text = "Nữ";
@@ -126,7 +126,7 @@
             this.rabNam.AutoSize = true;
             this.rabNam.Location = new System.Drawing.Point(130, 76);
             this.rabNam.Name = "rabNam";
-            this.rabNam.Size = new System.Drawing.Size(47, 17);
+            this.rabNam.Size = new System.Drawing.Size(54, 20);
             this.rabNam.TabIndex = 1;
             this.rabNam.TabStop = true;
             this.rabNam.Text = "Nam";
@@ -232,6 +232,7 @@
             // 
             // colID
             // 
+            this.colID.DataPropertyName = "ID";
             this.colID.HeaderText = "ID";
             this.colID.Name = "colID";
             this.colID.Width = 50;
@@ -239,24 +240,28 @@
             // colHoTen
             // 
             this.colHoTen.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colHoTen.DataPropertyName = "HoTenKH";
             this.colHoTen.HeaderText = "Họ Tên";
             this.colHoTen.Name = "colHoTen";
             // 
             // colGioiTinh
             // 
             this.colGioiTinh.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colGioiTinh.DataPropertyName = "GioiTinh";
             this.colGioiTinh.HeaderText = "Giới Tính";
             this.colGioiTinh.Name = "colGioiTinh";
             // 
             // colDiaChi
             // 
             this.colDiaChi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colDiaChi.DataPropertyName = "DiaChi";
             this.colDiaChi.HeaderText = "Địa Chỉ";
             this.colDiaChi.Name = "colDiaChi";
             // 
             // colSDT
             // 
             this.colSDT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colSDT.DataPropertyName = "SDT";
             this.colSDT.HeaderText = "Số Điện Thoại";
             this.colSDT.Name = "colSDT";
             // 

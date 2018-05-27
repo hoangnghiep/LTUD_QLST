@@ -5,10 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using DTO;
 
 namespace DAL
 {
-    class ChiTietHoaDon_DAL:ConnectDB
+    public class ChiTietHoaDon_DAL :ConnectDB
     {
         public DataTable GetAllChiTietHoaDon()
         {
@@ -31,15 +32,15 @@ namespace DAL
             return dataTable;
         }
 
-        public string AddChiTietHoaDon(int idHD, int idSP, int soLuong)
+        public string AddChiTietHoaDon(ChiTietHoaDon_ET chiTietHoaDon)
         {
             try
             {
                 SqlCommand cmd = new SqlCommand("SP_ChiTietHoaDon_Add", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@id_hoadon", idHD);
-                cmd.Parameters.AddWithValue("@id_sanpham", idSP);
-                cmd.Parameters.AddWithValue("@soluong", soLuong);
+                cmd.Parameters.AddWithValue("@id_hoadon", chiTietHoaDon.ID_HoaDon);
+                cmd.Parameters.AddWithValue("@id_sanpham", chiTietHoaDon.ID_SanPham);
+                cmd.Parameters.AddWithValue("@soluong", chiTietHoaDon.SoLuong);
 
                 if (cmd.ExecuteNonQuery() > 0)
                 {
@@ -56,16 +57,16 @@ namespace DAL
             }
         }
 
-        public string UpdateChiTietHoaDon(int id, int idHD, int idSP, int soLuong)
+        public string UpdateChiTietHoaDon(ChiTietHoaDon_ET chiTietHoaDon)
         {
             try
             {
                 SqlCommand cmd = new SqlCommand("SP_ChiTietHoaDon_Update", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@id", id);
-                cmd.Parameters.AddWithValue("@id_hoadon", idHD);
-                cmd.Parameters.AddWithValue("@id_sanpham", idSP);
-                cmd.Parameters.AddWithValue("@soluong", soLuong);
+                cmd.Parameters.AddWithValue("@id", chiTietHoaDon.ID);
+                cmd.Parameters.AddWithValue("@id_hoadon", chiTietHoaDon.ID_HoaDon);
+                cmd.Parameters.AddWithValue("@id_sanpham", chiTietHoaDon.ID_SanPham);
+                cmd.Parameters.AddWithValue("@soluong", chiTietHoaDon.SoLuong);
 
                 if (cmd.ExecuteNonQuery() > 0)
                 {
@@ -82,13 +83,13 @@ namespace DAL
             }
         }
 
-        public string DeleteChiTietHoaDon(int id)
+        public string DeleteChiTietHoaDon(ChiTietHoaDon_ET chiTietHoaDon)
         {
             try
             {
                 SqlCommand cmd = new SqlCommand("SP_ChiTietHoaDon_Delete", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@id", id);
+                cmd.Parameters.AddWithValue("@id", chiTietHoaDon.ID);
 
                 if (cmd.ExecuteNonQuery() > 0)
                 {

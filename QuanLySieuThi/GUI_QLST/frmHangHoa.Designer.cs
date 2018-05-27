@@ -221,24 +221,28 @@
             // colMaSP
             // 
             this.colMaSP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colMaSP.DataPropertyName = "MaSP";
             this.colMaSP.HeaderText = "Mã sản phẩm";
             this.colMaSP.Name = "colMaSP";
             // 
             // colTenSP
             // 
             this.colTenSP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colTenSP.DataPropertyName = "TenSP";
             this.colTenSP.HeaderText = "Tên sản phẩm";
             this.colTenSP.Name = "colTenSP";
             // 
             // colGiaSP
             // 
             this.colGiaSP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colGiaSP.DataPropertyName = "GiaSP";
             this.colGiaSP.HeaderText = "Giá";
             this.colGiaSP.Name = "colGiaSP";
             // 
             // colSoLuong
             // 
             this.colSoLuong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colSoLuong.DataPropertyName = "SoLuong";
             this.colSoLuong.HeaderText = "Số lượng";
             this.colSoLuong.Name = "colSoLuong";
             // 
@@ -254,6 +258,7 @@
             this.Name = "frmHangHoa";
             this.Text = "frmHangHoa";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmHangHoa_Load);
             this.grbThongTin.ResumeLayout(false);
             this.grbThongTin.PerformLayout();
             this.grbChucNang.ResumeLayout(false);

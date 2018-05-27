@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 
 namespace DAL
 {
-    class ConnectDB
+    public class ConnectDB
     {
         protected SqlConnection conn = new SqlConnection("Data Source=.;Initial Catalog=QUANLYSIEUTHI;Integrated Security=True");
     }

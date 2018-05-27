@@ -271,7 +271,7 @@ BEGIN
 	SELECT MaSP,TenSP, GiaSP, SoLuong FROM SanPham
 END
 GO
---drop proc SP_SanPham_GetByID
+--drop proc SP_SanPham_GetAllTable
 
 --Lấy một dữ liệu theo id
 CREATE PROCEDURE SP_SanPham_GetByID

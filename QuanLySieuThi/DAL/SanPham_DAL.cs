@@ -9,14 +9,14 @@ using DTO;
 
 namespace DAL
 {
-    class SanPham_DAL : ConnectDB
+    public class SanPham_DAL : ConnectDB
     {
 
         public DataTable GetAllSanPham() {
             SqlCommand cmd = new SqlCommand("SP_SanPham_GetAllTable", conn);
             cmd.CommandType = CommandType.StoredProcedure;
             DataTable dataTable = new DataTable();
-            SqlDataAdapter adapter = new SqlDataAdapter();
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             adapter.Fill(dataTable);
             return dataTable;
         }
@@ -26,21 +26,21 @@ namespace DAL
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@id", id);
             DataTable dataTable = new DataTable();
-            SqlDataAdapter adapter = new SqlDataAdapter();
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             adapter.Fill(dataTable);
             return dataTable;
         }
 
-        public string AddSanPham(SanPham_DTO sanPham,string maSP, string tenSP, int giaSP, int soLuong)
+        public string AddSanPham(SanPham_ET sanPham)
         {
             try
             {
                 SqlCommand cmd = new SqlCommand("SP_SanPham_Add", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@masp", maSP);
-                cmd.Parameters.AddWithValue("@tensp", tenSP);
-                cmd.Parameters.AddWithValue("@giasp", giaSP);
-                cmd.Parameters.AddWithValue("@soluong", soLuong);
+                cmd.Parameters.AddWithValue("@masp", sanPham.MaSP);
+                cmd.Parameters.AddWithValue("@tensp", sanPham.TenSP);
+                cmd.Parameters.AddWithValue("@giasp", sanPham.GiaSP);
+                cmd.Parameters.AddWithValue("@soluong", sanPham.SoLuong);
 
                 if (cmd.ExecuteNonQuery() > 0)
                 {
@@ -57,16 +57,16 @@ namespace DAL
             }
         }
 
-        public string UpdateSanPham(int id, string maSP, string tenSP, int giaSP, int soLuong) {
+        public string UpdateSanPham(SanPham_ET sanPham) {
             try
             {
                 SqlCommand cmd = new SqlCommand("SP_SanPham_Update", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@id", id);
-                cmd.Parameters.AddWithValue("@masp", maSP);
-                cmd.Parameters.AddWithValue("@tensp", tenSP);
-                cmd.Parameters.AddWithValue("@giasp", giaSP);
-                cmd.Parameters.AddWithValue("@soluong", soLuong);
+                cmd.Parameters.AddWithValue("@id", sanPham.ID);
+                cmd.Parameters.AddWithValue("@masp", sanPham.MaSP);
+                cmd.Parameters.AddWithValue("@tensp", sanPham.TenSP);
+                cmd.Parameters.AddWithValue("@giasp", sanPham.GiaSP);
+                cmd.Parameters.AddWithValue("@soluong", sanPham.SoLuong);
 
                 if (cmd.ExecuteNonQuery() > 0) {
                     return "Câp nhật sản phẩm thành công!";
@@ -80,13 +80,13 @@ namespace DAL
             }
         }
 
-        public string DeleteSanPham(int id)
+        public string DeleteSanPham(SanPham_ET sanPham)
         {
             try
             {
                 SqlCommand cmd = new SqlCommand("SP_SanPham_Delete", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@id", id);
+                cmd.Parameters.AddWithValue("@id", sanPham.ID);
 
                 if (cmd.ExecuteNonQuery() > 0)
                 {

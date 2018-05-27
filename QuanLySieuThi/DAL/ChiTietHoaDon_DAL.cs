@@ -16,7 +16,7 @@ namespace DAL
             SqlCommand cmd = new SqlCommand("SP_ChiTietHoaDon_GetAllTable", conn);
             cmd.CommandType = CommandType.StoredProcedure;
             DataTable dataTable = new DataTable();
-            SqlDataAdapter adapter = new SqlDataAdapter();
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             adapter.Fill(dataTable);
             return dataTable;
         }
@@ -27,15 +27,16 @@ namespace DAL
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@id", id);
             DataTable dataTable = new DataTable();
-            SqlDataAdapter adapter = new SqlDataAdapter();
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             adapter.Fill(dataTable);
             return dataTable;
         }
 
-        public string AddChiTietHoaDon(ChiTietHoaDon_ET chiTietHoaDon)
+        public bool AddChiTietHoaDon(ChiTietHoaDon_ET chiTietHoaDon)
         {
             try
             {
+                conn.Open();
                 SqlCommand cmd = new SqlCommand("SP_ChiTietHoaDon_Add", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id_hoadon", chiTietHoaDon.ID_HoaDon);
@@ -44,23 +45,28 @@ namespace DAL
 
                 if (cmd.ExecuteNonQuery() > 0)
                 {
-                    return "Thêm chi tiết hóa đơn thành công!";
+                    return true;
                 }
                 else
                 {
-                    return "Thêm chi tiết hóa đơn thất bại!";
+                    return false;
                 }
             }
             catch (Exception ex)
             {
-                return "Thêm chi tiết hóa đơn thất bại! " + ex.Message;
+                return false;
+            }
+            finally
+            {
+                conn.Close();
             }
         }
 
-        public string UpdateChiTietHoaDon(ChiTietHoaDon_ET chiTietHoaDon)
+        public bool UpdateChiTietHoaDon(ChiTietHoaDon_ET chiTietHoaDon)
         {
             try
             {
+                conn.Open();
                 SqlCommand cmd = new SqlCommand("SP_ChiTietHoaDon_Update", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id", chiTietHoaDon.ID);
@@ -70,39 +76,48 @@ namespace DAL
 
                 if (cmd.ExecuteNonQuery() > 0)
                 {
-                    return "Câp nhật chi tiết hóa đơn thành công!";
+                    return true;
                 }
                 else
                 {
-                    return "Cập nhật chi tiết hóa đơn thất bại!";
+                    return false;
                 }
             }
             catch (Exception ex)
             {
-                return "Cập nhật chi tiết hóa đơn thất bại! " + ex.Message;
+                return false;
+            }
+            finally
+            {
+                conn.Close();
             }
         }
 
-        public string DeleteChiTietHoaDon(ChiTietHoaDon_ET chiTietHoaDon)
+        public bool DeleteChiTietHoaDon(ChiTietHoaDon_ET chiTietHoaDon)
         {
             try
             {
+                conn.Open();
                 SqlCommand cmd = new SqlCommand("SP_ChiTietHoaDon_Delete", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id", chiTietHoaDon.ID);
 
                 if (cmd.ExecuteNonQuery() > 0)
                 {
-                    return "Xóa chi tiết hóa đơn thành công!";
+                    return true;
                 }
                 else
                 {
-                    return "Xóa chi tiết hóa đơn thất bại!";
+                    return false;
                 }
             }
             catch (Exception ex)
             {
-                return "Xóa chi tiết hóa đơn thất bại! " + ex.Message;
+                return false;
+            }
+            finally
+            {
+                conn.Close();
             }
         }
     }

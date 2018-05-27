@@ -16,7 +16,7 @@ namespace DAL
             SqlCommand cmd = new SqlCommand("SP_HoaDon_GetAllTable", conn);
             cmd.CommandType = CommandType.StoredProcedure;
             DataTable dataTable = new DataTable();
-            SqlDataAdapter adapter = new SqlDataAdapter();
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             adapter.Fill(dataTable);
             return dataTable;
         }
@@ -27,15 +27,16 @@ namespace DAL
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@id", id);
             DataTable dataTable = new DataTable();
-            SqlDataAdapter adapter = new SqlDataAdapter();
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             adapter.Fill(dataTable);
             return dataTable;
         }
 
-        public string AddHoaDon(HoaDon_ET hoaDon)
+        public bool AddHoaDon(HoaDon_ET hoaDon)
         {
             try
             {
+                conn.Open();
                 SqlCommand cmd = new SqlCommand("SP_HoaDon_Add", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id_kh", hoaDon.ID_KhachHang);
@@ -44,23 +45,28 @@ namespace DAL
 
                 if (cmd.ExecuteNonQuery() > 0)
                 {
-                    return "Thêm hóa đơn thành công!";
+                    return true;
                 }
                 else
                 {
-                    return "Thêm hóa đơn thất bại!";
+                    return false;
                 }
             }
             catch (Exception ex)
             {
-                return "Thêm hóa đơn thất bại! " + ex.Message;
+                return false;
+            }
+            finally
+            {
+                conn.Close();
             }
         }
 
-        public string UpdateHoaDon(HoaDon_ET hoaDon)
+        public bool UpdateHoaDon(HoaDon_ET hoaDon)
         {
             try
             {
+                conn.Open();
                 SqlCommand cmd = new SqlCommand("SP_HoaDon_Update", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id", hoaDon.ID);
@@ -70,39 +76,48 @@ namespace DAL
 
                 if (cmd.ExecuteNonQuery() > 0)
                 {
-                    return "Câp nhật hóa đơn thành công!";
+                    return true;
                 }
                 else
                 {
-                    return "Cập nhật hóa đơn thất bại!";
+                    return false;
                 }
             }
             catch (Exception ex)
             {
-                return "Cập nhật hóa đơn thất bại! " + ex.Message;
+                return false;
+            }
+            finally
+            {
+                conn.Close();
             }
         }
 
-        public string DeleteHoaDon(HoaDon_ET hoaDon)
+        public bool DeleteHoaDon(HoaDon_ET hoaDon)
         {
             try
             {
+                conn.Open();
                 SqlCommand cmd = new SqlCommand("SP_HoaDon_Delete", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id", hoaDon.ID);
 
                 if (cmd.ExecuteNonQuery() > 0)
                 {
-                    return "Xóa hóa đơn thành công!";
+                    return true;
                 }
                 else
                 {
-                    return "Xóa hóa đơn thất bại!";
+                    return false;
                 }
             }
             catch (Exception ex)
             {
-                return "Xóa hóa đơn thất bại! " + ex.Message;
+                return false;
+            }
+            finally
+            {
+                conn.Close();
             }
         }
     }

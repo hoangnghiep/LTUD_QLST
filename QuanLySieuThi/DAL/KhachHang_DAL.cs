@@ -16,7 +16,7 @@ namespace DAL
             SqlCommand cmd = new SqlCommand("SP_KhachHang_GetAllTable", conn);
             cmd.CommandType = CommandType.StoredProcedure;
             DataTable dataTable = new DataTable();
-            SqlDataAdapter adapter = new SqlDataAdapter();
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             adapter.Fill(dataTable);
             return dataTable;
         }
@@ -27,15 +27,16 @@ namespace DAL
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@id", id);
             DataTable dataTable = new DataTable();
-            SqlDataAdapter adapter = new SqlDataAdapter();
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             adapter.Fill(dataTable);
             return dataTable;
         }
 
-        public string AddKhachHang(KhachHang_ET khachHang)
+        public bool AddKhachHang(KhachHang_ET khachHang)
         {
             try
             {
+                conn.Open();
                 SqlCommand cmd = new SqlCommand("SP_KhachHang_Add", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@hoten", khachHang.HoTen);
@@ -45,23 +46,28 @@ namespace DAL
 
                 if (cmd.ExecuteNonQuery() > 0)
                 {
-                    return "Thêm khách hàng thành công!";
+                    return true;
                 }
                 else
                 {
-                    return "Thêm khách hàng thất bại!";
+                    return false;
                 }
             }
             catch (Exception ex)
             {
-                return "Thêm khách hàng thất bại! " + ex.Message;
+                return false;
+            }
+            finally
+            {
+                conn.Close();
             }
         }
 
-        public string UpdateKhachHang(KhachHang_ET khachHang)
+        public bool UpdateKhachHang(KhachHang_ET khachHang)
         {
             try
             {
+                conn.Open();
                 SqlCommand cmd = new SqlCommand("SP_KhachHang_Update", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id", khachHang.ID);
@@ -72,39 +78,48 @@ namespace DAL
 
                 if (cmd.ExecuteNonQuery() > 0)
                 {
-                    return "Câp nhật khách hàng thành công!";
+                    return true;
                 }
                 else
                 {
-                    return "Cập nhật khách hàng thất bại!";
+                    return false;
                 }
             }
             catch (Exception ex)
             {
-                return "Cập nhật khách hàng thất bại! " + ex.Message;
+                return false;
+            }
+            finally
+            {
+                conn.Close();
             }
         }
 
-        public string DeleteKhachHang(KhachHang_ET khachHang)
+        public bool DeleteKhachHang(KhachHang_ET khachHang)
         {
             try
             {
+                conn.Open();
                 SqlCommand cmd = new SqlCommand("SP_KhachHang_Delete", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id", khachHang.ID);
 
                 if (cmd.ExecuteNonQuery() > 0)
                 {
-                    return "Xóa khách hàng thành công!";
+                    return true;
                 }
                 else
                 {
-                    return "Xóa khách hàng thất bại!";
+                    return false;
                 }
             }
             catch (Exception ex)
             {
-                return "Xóa khách hàng thất bại! " + ex.Message;
+                return false;
+            }
+            finally
+            {
+                conn.Close();
             }
         }
     }

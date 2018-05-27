@@ -268,17 +268,17 @@ GO
 CREATE PROCEDURE SP_SanPham_GetAllTable
 AS
 BEGIN
-	SELECT MaSP,TenSP, GiaSP, SoLuong FROM SanPham
+	SELECT * FROM SanPham
 END
 GO
---drop proc SP_SanPham_GetAllTable
+--drop proc SP_SanPham_GetByID
 
 --Lấy một dữ liệu theo id
 CREATE PROCEDURE SP_SanPham_GetByID
 	(@id int)
 AS
 BEGIN
-	SELECT MaSP,TenSP, GiaSP, SoLuong FROM SanPham WHERE ID = @id
+	SELECT * FROM SanPham WHERE ID = @id
 END
 GO
 

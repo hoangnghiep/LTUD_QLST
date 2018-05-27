@@ -39,6 +39,7 @@
             this.txtSDT = new System.Windows.Forms.TextBox();
             this.txtTenKH = new System.Windows.Forms.TextBox();
             this.grbChucNang = new System.Windows.Forms.GroupBox();
+            this.btnHuy = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
@@ -50,7 +51,8 @@
             this.colGioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnHuy = new System.Windows.Forms.Button();
+            this.txtID_KhachHang = new System.Windows.Forms.TextBox();
+            this.llbID = new System.Windows.Forms.Label();
             this.grbThongTin.SuspendLayout();
             this.grbChucNang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -59,6 +61,8 @@
             // grbThongTin
             // 
             this.grbThongTin.AutoSize = true;
+            this.grbThongTin.Controls.Add(this.txtID_KhachHang);
+            this.grbThongTin.Controls.Add(this.llbID);
             this.grbThongTin.Controls.Add(this.lblSDT);
             this.grbThongTin.Controls.Add(this.lblDiaChi);
             this.grbThongTin.Controls.Add(this.lblGioiTinh);
@@ -79,7 +83,7 @@
             // lblSDT
             // 
             this.lblSDT.AutoSize = true;
-            this.lblSDT.Location = new System.Drawing.Point(26, 156);
+            this.lblSDT.Location = new System.Drawing.Point(38, 148);
             this.lblSDT.Name = "lblSDT";
             this.lblSDT.Size = new System.Drawing.Size(73, 13);
             this.lblSDT.TabIndex = 2;
@@ -88,7 +92,7 @@
             // lblDiaChi
             // 
             this.lblDiaChi.AutoSize = true;
-            this.lblDiaChi.Location = new System.Drawing.Point(26, 120);
+            this.lblDiaChi.Location = new System.Drawing.Point(68, 115);
             this.lblDiaChi.Name = "lblDiaChi";
             this.lblDiaChi.Size = new System.Drawing.Size(43, 13);
             this.lblDiaChi.TabIndex = 2;
@@ -97,7 +101,7 @@
             // lblGioiTinh
             // 
             this.lblGioiTinh.AutoSize = true;
-            this.lblGioiTinh.Location = new System.Drawing.Point(26, 78);
+            this.lblGioiTinh.Location = new System.Drawing.Point(61, 90);
             this.lblGioiTinh.Name = "lblGioiTinh";
             this.lblGioiTinh.Size = new System.Drawing.Size(50, 13);
             this.lblGioiTinh.TabIndex = 2;
@@ -106,7 +110,7 @@
             // lblTen
             // 
             this.lblTen.AutoSize = true;
-            this.lblTen.Location = new System.Drawing.Point(26, 35);
+            this.lblTen.Location = new System.Drawing.Point(69, 64);
             this.lblTen.Name = "lblTen";
             this.lblTen.Size = new System.Drawing.Size(42, 13);
             this.lblTen.TabIndex = 2;
@@ -115,7 +119,7 @@
             // rabNu
             // 
             this.rabNu.AutoSize = true;
-            this.rabNu.Location = new System.Drawing.Point(199, 76);
+            this.rabNu.Location = new System.Drawing.Point(199, 88);
             this.rabNu.Name = "rabNu";
             this.rabNu.Size = new System.Drawing.Size(39, 17);
             this.rabNu.TabIndex = 3;
@@ -126,7 +130,7 @@
             // rabNam
             // 
             this.rabNam.AutoSize = true;
-            this.rabNam.Location = new System.Drawing.Point(130, 76);
+            this.rabNam.Location = new System.Drawing.Point(130, 88);
             this.rabNam.Name = "rabNam";
             this.rabNam.Size = new System.Drawing.Size(47, 17);
             this.rabNam.TabIndex = 2;
@@ -136,21 +140,21 @@
             // 
             // txtDiaChi
             // 
-            this.txtDiaChi.Location = new System.Drawing.Point(124, 120);
+            this.txtDiaChi.Location = new System.Drawing.Point(124, 115);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(183, 20);
             this.txtDiaChi.TabIndex = 4;
             // 
             // txtSDT
             // 
-            this.txtSDT.Location = new System.Drawing.Point(124, 156);
+            this.txtSDT.Location = new System.Drawing.Point(124, 148);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(183, 20);
             this.txtSDT.TabIndex = 5;
             // 
             // txtTenKH
             // 
-            this.txtTenKH.Location = new System.Drawing.Point(124, 32);
+            this.txtTenKH.Location = new System.Drawing.Point(124, 61);
             this.txtTenKH.Name = "txtTenKH";
             this.txtTenKH.Size = new System.Drawing.Size(183, 20);
             this.txtTenKH.TabIndex = 1;
@@ -170,6 +174,16 @@
             this.grbChucNang.TabIndex = 4;
             this.grbChucNang.TabStop = false;
             this.grbChucNang.Text = "Chức năng";
+            // 
+            // btnHuy
+            // 
+            this.btnHuy.Enabled = false;
+            this.btnHuy.Location = new System.Drawing.Point(43, 101);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(75, 23);
+            this.btnHuy.TabIndex = 10;
+            this.btnHuy.Text = "Hủy";
+            this.btnHuy.UseVisualStyleBackColor = true;
             // 
             // btnSua
             // 
@@ -271,15 +285,24 @@
             this.colSDT.HeaderText = "Số Điện Thoại";
             this.colSDT.Name = "colSDT";
             // 
-            // btnHuy
+            // txtID_KhachHang
             // 
-            this.btnHuy.Enabled = false;
-            this.btnHuy.Location = new System.Drawing.Point(43, 101);
-            this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(75, 23);
-            this.btnHuy.TabIndex = 10;
-            this.btnHuy.Text = "Hủy";
-            this.btnHuy.UseVisualStyleBackColor = true;
+            this.txtID_KhachHang.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtID_KhachHang.Enabled = false;
+            this.txtID_KhachHang.Location = new System.Drawing.Point(124, 29);
+            this.txtID_KhachHang.Name = "txtID_KhachHang";
+            this.txtID_KhachHang.Size = new System.Drawing.Size(183, 20);
+            this.txtID_KhachHang.TabIndex = 9;
+            // 
+            // llbID
+            // 
+            this.llbID.AutoSize = true;
+            this.llbID.Location = new System.Drawing.Point(29, 32);
+            this.llbID.Name = "llbID";
+            this.llbID.Size = new System.Drawing.Size(82, 13);
+            this.llbID.TabIndex = 10;
+            this.llbID.Text = "ID Khách hàng:";
             // 
             // frmKhachHang
             // 
@@ -327,5 +350,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colDiaChi;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSDT;
         private System.Windows.Forms.Button btnHuy;
+        private System.Windows.Forms.TextBox txtID_KhachHang;
+        private System.Windows.Forms.Label llbID;
     }
 }

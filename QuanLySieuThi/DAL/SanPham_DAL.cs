@@ -31,10 +31,11 @@ namespace DAL
             return dataTable;
         }
 
-        public string AddSanPham(SanPham_ET sanPham)
+        public bool AddSanPham(SanPham_ET sanPham)
         {
             try
             {
+                conn.Open();
                 SqlCommand cmd = new SqlCommand("SP_SanPham_Add", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@masp", sanPham.MaSP);
@@ -44,22 +45,27 @@ namespace DAL
 
                 if (cmd.ExecuteNonQuery() > 0)
                 {
-                    return "Thêm sản phẩm thành công!";
+                    return true;
                 }
                 else
                 {
-                    return "Thêm sản phẩm thất bại!";
+                    return false;
                 }
             }
             catch (Exception ex)
             {
-                return "Thêm sản phẩm thất bại! " + ex.Message;
+                return false;
+            }
+            finally
+            {
+                conn.Close();
             }
         }
 
-        public string UpdateSanPham(SanPham_ET sanPham) {
+        public bool UpdateSanPham(SanPham_ET sanPham) {
             try
             {
+                conn.Open();
                 SqlCommand cmd = new SqlCommand("SP_SanPham_Update", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id", sanPham.ID);
@@ -69,37 +75,45 @@ namespace DAL
                 cmd.Parameters.AddWithValue("@soluong", sanPham.SoLuong);
 
                 if (cmd.ExecuteNonQuery() > 0) {
-                    return "Câp nhật sản phẩm thành công!";
+                    return true;
                 }
                 else {
-                    return "Cập nhật sản phẩm thất bại!";
+                    return false;
                 }
             } catch (Exception ex)
             {
-                return "Cập nhật sản phẩm thất bại! " + ex.Message;
+                return false;
+            }
+            finally
+            {
+                conn.Close();
             }
         }
 
-        public string DeleteSanPham(SanPham_ET sanPham)
+        public bool DeleteSanPham(SanPham_ET sanPham)
         {
             try
             {
+                conn.Open();
                 SqlCommand cmd = new SqlCommand("SP_SanPham_Delete", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id", sanPham.ID);
 
                 if (cmd.ExecuteNonQuery() > 0)
                 {
-                    return "Xóa sản phẩm thành công!";
+                    return true;
                 }
                 else
                 {
-                    return "Xóa sản phẩm thất bại!";
+                    return false;
                 }
             }
             catch (Exception ex)
             {
-                return "Xóa sản phẩm thất bại! " + ex.Message;
+                return false;
+            }
+            finally {
+                conn.Close();
             }
         }
     }

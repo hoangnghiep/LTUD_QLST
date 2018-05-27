@@ -19,13 +19,13 @@ namespace BUS
         public DataTable GetSanPhamByID(int id) {
             return dal_SanPham.GetSanPhamByID(id);
         }
-        public string AddSanPham(SanPham_ET sanPham) {
+        public bool AddSanPham(SanPham_ET sanPham) {
             return dal_SanPham.AddSanPham(sanPham);
         }
-        public string UpdateSanPham(SanPham_ET sanPham) {
+        public bool UpdateSanPham(SanPham_ET sanPham) {
             return dal_SanPham.UpdateSanPham(sanPham);
         }
-        public string DeleteSanPham(SanPham_ET sanPham) {
+        public bool DeleteSanPham(SanPham_ET sanPham) {
             return dal_SanPham.DeleteSanPham(sanPham);
         }
     }

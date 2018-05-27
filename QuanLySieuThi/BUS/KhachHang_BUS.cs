@@ -22,17 +22,17 @@ namespace BUS
             return dal_KhachHang.GetKhachHangByID(id);
         }
 
-        public string AddKhachHang(KhachHang_ET khachHang)
+        public bool AddKhachHang(KhachHang_ET khachHang)
         {
             return dal_KhachHang.AddKhachHang(khachHang);
         }
 
-        public string UpdateKhachHang(KhachHang_ET khachHang)
+        public bool UpdateKhachHang(KhachHang_ET khachHang)
         {
             return dal_KhachHang.UpdateKhachHang(khachHang);
         }
 
-        public string DeleteKhachHang(KhachHang_ET khachHang)
+        public bool DeleteKhachHang(KhachHang_ET khachHang)
         {
             return dal_KhachHang.DeleteKhachHang(khachHang);
         }

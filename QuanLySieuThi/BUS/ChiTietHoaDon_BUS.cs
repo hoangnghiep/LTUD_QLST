@@ -22,17 +22,17 @@ namespace BUS
             return dal_ChiTietHoaDon.GetHoaChiTietDonByID(id);
         }
 
-        public string AddChiTietHoaDon(ChiTietHoaDon_ET chiTietHoaDon)
+        public bool AddChiTietHoaDon(ChiTietHoaDon_ET chiTietHoaDon)
         {
             return dal_ChiTietHoaDon.AddChiTietHoaDon(chiTietHoaDon);
         }
 
-        public string UpdateChiTietHoaDon(ChiTietHoaDon_ET chiTietHoaDon)
+        public bool UpdateChiTietHoaDon(ChiTietHoaDon_ET chiTietHoaDon)
         {
             return dal_ChiTietHoaDon.UpdateChiTietHoaDon(chiTietHoaDon);
         }
 
-        public string DeleteChiTietHoaDon(ChiTietHoaDon_ET chiTietHoaDon)
+        public bool DeleteChiTietHoaDon(ChiTietHoaDon_ET chiTietHoaDon)
         {
             return dal_ChiTietHoaDon.DeleteChiTietHoaDon(chiTietHoaDon);
         }

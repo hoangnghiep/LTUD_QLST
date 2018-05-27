@@ -22,17 +22,17 @@ namespace BUS
             return dal_NhanVien.GetNhanVienByID(id);
         }
 
-        public string AddNhanVien(NhanVien_ET nhanVien)
+        public bool AddNhanVien(NhanVien_ET nhanVien)
         {
             return dal_NhanVien.AddNhanVien(nhanVien);
         }
 
-        public string UpdateNhanVien(NhanVien_ET nhanVien)
+        public bool UpdateNhanVien(NhanVien_ET nhanVien)
         {
             return dal_NhanVien.UpdateNhanVien(nhanVien);           
         }
 
-        public string DeleteNhanVien(NhanVien_ET nhanVien)
+        public bool DeleteNhanVien(NhanVien_ET nhanVien)
         {
             return dal_NhanVien.DeleteNhanVien(nhanVien);
         }

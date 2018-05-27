@@ -16,7 +16,7 @@ namespace DAL
             SqlCommand cmd = new SqlCommand("SP_NhanVien_GetAllTable", conn);
             cmd.CommandType = CommandType.StoredProcedure;
             DataTable dataTable = new DataTable();
-            SqlDataAdapter adapter = new SqlDataAdapter();
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             adapter.Fill(dataTable);
             return dataTable;
         }
@@ -27,15 +27,16 @@ namespace DAL
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@id", id);
             DataTable dataTable = new DataTable();
-            SqlDataAdapter adapter = new SqlDataAdapter();
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             adapter.Fill(dataTable);
             return dataTable;
         }
 
-        public string AddNhanVien(NhanVien_ET nhanVien)
+        public bool AddNhanVien(NhanVien_ET nhanVien)
         {
             try
             {
+                conn.Open();
                 SqlCommand cmd = new SqlCommand("SP_NhanVien_Add", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@hoten", nhanVien.HoTen);
@@ -46,23 +47,28 @@ namespace DAL
 
                 if (cmd.ExecuteNonQuery() > 0)
                 {
-                    return "Thêm nhân viên thành công!";
+                    return true;
                 }
                 else
                 {
-                    return "Thêm nhân viên thất bại!";
+                    return false;
                 }
             }
             catch (Exception ex)
             {
-                return "Thêm nhân viên thất bại! " + ex.Message;
+                return false;
+            }
+            finally
+            {
+                conn.Close();
             }
         }
 
-        public string UpdateNhanVien(NhanVien_ET nhanVien)
+        public bool UpdateNhanVien(NhanVien_ET nhanVien)
         {
             try
             {
+                conn.Open();
                 SqlCommand cmd = new SqlCommand("SP_NhanVien_Update", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id", nhanVien.ID);
@@ -74,39 +80,48 @@ namespace DAL
 
                 if (cmd.ExecuteNonQuery() > 0)
                 {
-                    return "Câp nhật nhân viên thành công!";
+                    return true;
                 }
                 else
                 {
-                    return "Cập nhật nhân viên thất bại!";
+                    return false;
                 }
             }
             catch (Exception ex)
             {
-                return "Cập nhật nhân viên thất bại! " + ex.Message;
+                return false;
+            }
+            finally
+            {
+                conn.Close();
             }
         }
 
-        public string DeleteNhanVien(NhanVien_ET nhanVien)
+        public bool DeleteNhanVien(NhanVien_ET nhanVien)
         {
             try
             {
+                conn.Open();
                 SqlCommand cmd = new SqlCommand("SP_NhanVien_Delete", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id", nhanVien.ID);
 
                 if (cmd.ExecuteNonQuery() > 0)
                 {
-                    return "Xóa nhân viên thành công!";
+                    return true;
                 }
                 else
                 {
-                    return "Xóa nhân viên thất bại!";
+                    return false;
                 }
             }
             catch (Exception ex)
             {
-                return "Xóa nhân viên thất bại! " + ex.Message;
+                return false;
+            }
+            finally
+            {
+                conn.Close();
             }
         }
     }

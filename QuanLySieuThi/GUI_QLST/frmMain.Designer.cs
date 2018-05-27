@@ -33,7 +33,7 @@
             this.toolNhanVien = new System.Windows.Forms.ToolStripMenuItem();
             this.toolKhachHang = new System.Windows.Forms.ToolStripMenuItem();
             this.toolHangHoa = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolHoaDon = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolBanHang = new System.Windows.Forms.ToolStripMenuItem();
             this.toolThongTin = new System.Windows.Forms.ToolStripMenuItem();
             this.toolHuongDan = new System.Windows.Forms.ToolStripMenuItem();
             this.mestripMain.SuspendLayout();
@@ -57,7 +57,7 @@
             this.toolNhanVien,
             this.toolKhachHang,
             this.toolHangHoa,
-            this.toolHoaDon});
+            this.toolBanHang});
             this.toolQuanLy.Name = "toolQuanLy";
             this.toolQuanLy.Size = new System.Drawing.Size(62, 20);
             this.toolQuanLy.Text = "Quản Lý";
@@ -83,12 +83,12 @@
             this.toolHangHoa.Text = "Hàng Hóa";
             this.toolHangHoa.Click += new System.EventHandler(this.toolHangHoa_Click);
             // 
-            // toolHoaDon
+            // toolBanHang
             // 
-            this.toolHoaDon.Name = "toolHoaDon";
-            this.toolHoaDon.Size = new System.Drawing.Size(180, 22);
-            this.toolHoaDon.Text = "Hóa Đơn";
-            this.toolHoaDon.Click += new System.EventHandler(this.toolHoaDon_Click);
+            this.toolBanHang.Name = "toolBanHang";
+            this.toolBanHang.Size = new System.Drawing.Size(180, 22);
+            this.toolBanHang.Text = "Bán Hàng";
+            this.toolBanHang.Click += new System.EventHandler(this.toolBanHang_Click);
             // 
             // toolThongTin
             // 
@@ -126,7 +126,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolNhanVien;
         private System.Windows.Forms.ToolStripMenuItem toolKhachHang;
         private System.Windows.Forms.ToolStripMenuItem toolHangHoa;
-        private System.Windows.Forms.ToolStripMenuItem toolHoaDon;
+        private System.Windows.Forms.ToolStripMenuItem toolBanHang;
         private System.Windows.Forms.ToolStripMenuItem toolThongTin;
         private System.Windows.Forms.ToolStripMenuItem toolHuongDan;
     }

@@ -48,6 +48,7 @@
             this.colTenSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colGiaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnHuy = new System.Windows.Forms.Button();
             this.grbThongTin.SuspendLayout();
             this.grbChucNang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvHangHoa)).BeginInit();
@@ -60,7 +61,7 @@
             this.txtMaSP.Location = new System.Drawing.Point(91, 37);
             this.txtMaSP.Name = "txtMaSP";
             this.txtMaSP.Size = new System.Drawing.Size(160, 20);
-            this.txtMaSP.TabIndex = 0;
+            this.txtMaSP.TabIndex = 1;
             // 
             // txtTenSP
             // 
@@ -69,7 +70,7 @@
             this.txtTenSP.Location = new System.Drawing.Point(91, 73);
             this.txtTenSP.Name = "txtTenSP";
             this.txtTenSP.Size = new System.Drawing.Size(160, 20);
-            this.txtTenSP.TabIndex = 0;
+            this.txtTenSP.TabIndex = 2;
             // 
             // txtGiaSP
             // 
@@ -78,7 +79,7 @@
             this.txtGiaSP.Location = new System.Drawing.Point(91, 108);
             this.txtGiaSP.Name = "txtGiaSP";
             this.txtGiaSP.Size = new System.Drawing.Size(160, 20);
-            this.txtGiaSP.TabIndex = 0;
+            this.txtGiaSP.TabIndex = 3;
             // 
             // txtSoLuong
             // 
@@ -87,7 +88,7 @@
             this.txtSoLuong.Location = new System.Drawing.Point(91, 145);
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(160, 20);
-            this.txtSoLuong.TabIndex = 0;
+            this.txtSoLuong.TabIndex = 4;
             // 
             // lblMaHH
             // 
@@ -135,6 +136,7 @@
             this.grbThongTin.Controls.Add(this.lblGiaSP);
             this.grbThongTin.Controls.Add(this.txtSoLuong);
             this.grbThongTin.Controls.Add(this.lblMaHH);
+            this.grbThongTin.Enabled = false;
             this.grbThongTin.Location = new System.Drawing.Point(12, 12);
             this.grbThongTin.Name = "grbThongTin";
             this.grbThongTin.Size = new System.Drawing.Size(290, 191);
@@ -148,6 +150,7 @@
             this.grbChucNang.Controls.Add(this.btnSua);
             this.grbChucNang.Controls.Add(this.btnThoat);
             this.grbChucNang.Controls.Add(this.btnXoa);
+            this.grbChucNang.Controls.Add(this.btnHuy);
             this.grbChucNang.Controls.Add(this.btnLuu);
             this.grbChucNang.Controls.Add(this.btnThem);
             this.grbChucNang.Location = new System.Drawing.Point(380, 12);
@@ -159,10 +162,11 @@
             // 
             // btnSua
             // 
+            this.btnSua.Enabled = false;
             this.btnSua.Location = new System.Drawing.Point(148, 34);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(75, 23);
-            this.btnSua.TabIndex = 0;
+            this.btnSua.TabIndex = 6;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
             // 
@@ -171,25 +175,27 @@
             this.btnThoat.Location = new System.Drawing.Point(148, 101);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(75, 23);
-            this.btnThoat.TabIndex = 0;
+            this.btnThoat.TabIndex = 10;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
             // 
             // btnXoa
             // 
+            this.btnXoa.Enabled = false;
             this.btnXoa.Location = new System.Drawing.Point(43, 63);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(75, 23);
-            this.btnXoa.TabIndex = 0;
+            this.btnXoa.TabIndex = 7;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
             // 
             // btnLuu
             // 
+            this.btnLuu.Enabled = false;
             this.btnLuu.Location = new System.Drawing.Point(148, 63);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(75, 23);
-            this.btnLuu.TabIndex = 0;
+            this.btnLuu.TabIndex = 8;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = true;
             // 
@@ -198,7 +204,7 @@
             this.btnThem.Location = new System.Drawing.Point(43, 34);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(75, 23);
-            this.btnThem.TabIndex = 0;
+            this.btnThem.TabIndex = 5;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
             // 
@@ -216,7 +222,7 @@
             this.dtgvHangHoa.Location = new System.Drawing.Point(12, 268);
             this.dtgvHangHoa.Name = "dtgvHangHoa";
             this.dtgvHangHoa.Size = new System.Drawing.Size(696, 179);
-            this.dtgvHangHoa.TabIndex = 4;
+            this.dtgvHangHoa.TabIndex = 11;
             // 
             // colMaSP
             // 
@@ -245,6 +251,16 @@
             this.colSoLuong.DataPropertyName = "SoLuong";
             this.colSoLuong.HeaderText = "Số lượng";
             this.colSoLuong.Name = "colSoLuong";
+            // 
+            // btnHuy
+            // 
+            this.btnHuy.Enabled = false;
+            this.btnHuy.Location = new System.Drawing.Point(43, 101);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(75, 23);
+            this.btnHuy.TabIndex = 9;
+            this.btnHuy.Text = "Hủy";
+            this.btnHuy.UseVisualStyleBackColor = true;
             // 
             // frmHangHoa
             // 
@@ -289,5 +305,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn colTenSP;
         private System.Windows.Forms.DataGridViewTextBoxColumn colGiaSP;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSoLuong;
+        private System.Windows.Forms.Button btnHuy;
     }
 }

@@ -86,9 +86,18 @@ namespace GUI_QLST
             }
         }
 
-        private void toolHoaDon_Click(object sender, EventArgs e)
+        private void toolBanHang_Click(object sender, EventArgs e)
         {
-
+            if (!checkForm("frmBanHang"))
+            {
+                frmBanHang fhh = new frmBanHang();
+                fhh.MdiParent = this;
+                fhh.Show();
+            }
+            else
+            {
+                FormConDaCo("frmBanHang");
+            }
         }
     }
 }

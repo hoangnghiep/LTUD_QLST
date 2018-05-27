@@ -18,3 +18,5 @@ D:\HoangNghiep\Tai lieu\Nam3\LAPTRINHUNGDUNG\LTUD_QLST\QuanLySieuThi\GUI_QLST\bi
 D:\HoangNghiep\Tai lieu\Nam3\LAPTRINHUNGDUNG\LTUD_QLST\QuanLySieuThi\GUI_QLST\bin\Debug\DTO.pdb
 D:\HoangNghiep\Tai lieu\Nam3\LAPTRINHUNGDUNG\LTUD_QLST\QuanLySieuThi\GUI_QLST\bin\Debug\DAL.pdb
 D:\HoangNghiep\Tai lieu\Nam3\LAPTRINHUNGDUNG\LTUD_QLST\QuanLySieuThi\GUI_QLST\obj\Debug\GUI_QLST.csproj.CopyComplete
+D:\HoangNghiep\Tai lieu\Nam3\LAPTRINHUNGDUNG\LTUD_QLST\QuanLySieuThi\GUI_QLST\obj\Debug\GUI_QLST.frmBanHang.resources
+D:\HoangNghiep\Tai lieu\Nam3\LAPTRINHUNGDUNG\LTUD_QLST\QuanLySieuThi\GUI_QLST\obj\Debug\GUI_QLST.frmHoaDon.resources

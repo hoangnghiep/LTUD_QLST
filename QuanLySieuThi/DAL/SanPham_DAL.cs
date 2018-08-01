@@ -11,7 +11,10 @@ namespace DAL
 {
     public class SanPham_DAL : ConnectDB
     {
-
+        /// <summary>
+        /// Hàm lấy tất cả sản phẩm trong database
+        /// </summary>
+        /// <returns>Trả về bảng sản phẩm</returns>
         public DataTable GetAllSanPham() {
             SqlCommand cmd = new SqlCommand("SP_SanPham_GetAllTable", conn);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -21,6 +24,11 @@ namespace DAL
             return dataTable;
         }
 
+        /// <summary>
+        /// Lấy sản phẩm theo ID
+        /// </summary>
+        /// <param name="id">ID của sảm phẩm</param>
+        /// <returns>Trả về 1 sản phẩm trong bảng sản phẩm</returns>
         public DataTable GetSanPhamByID(int id) {
             SqlCommand cmd = new SqlCommand("SP_SanPham_GetByID", conn);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -31,6 +39,11 @@ namespace DAL
             return dataTable;
         }
 
+        /// <summary>
+        /// Hàm thêm sản phẩm vào database
+        /// </summary>
+        /// <param name="sanPham">Đối tượng sản phẩm</param>
+        /// <returns>trả vè true nếu thêm thành công, false nếu thêm không thành công</returns>
         public bool AddSanPham(SanPham_ET sanPham)
         {
             try
@@ -62,6 +75,11 @@ namespace DAL
             }
         }
 
+        /// <summary>
+        /// Hàm sửa sản phẩm
+        /// </summary>
+        /// <param name="sanPham">Truyền đối tượng sản phẩm</param>
+        /// <returns>trả vè true nếu sửa thành công, false nếu sửa không thành công</returns>
         public bool UpdateSanPham(SanPham_ET sanPham) {
             try
             {
@@ -90,6 +108,11 @@ namespace DAL
             }
         }
 
+        /// <summary>
+        /// Hàm xóa sản phẩm
+        /// </summary>
+        /// <param name="sanPham">Đối tượng sản phẩm</param>
+        /// <returns>trả vè true nếu xóa thành công, false nếu Xóa không thành công</returns>
         public bool DeleteSanPham(SanPham_ET sanPham)
         {
             try

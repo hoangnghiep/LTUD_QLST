@@ -19,11 +19,13 @@ namespace GUI_QLST
             InitializeComponent();
         }
 
+        //Khai báo bus nhân viên
         NhanVien_BUS bus_NhanVien = new NhanVien_BUS();
         string lenh;
         string ADD = "add";
         string EDIT = "edit";
 
+        //Khai báo các biến
         private int id_NhanVien;
         private string hoTenNV;
         private string gioiTinh;
@@ -31,6 +33,7 @@ namespace GUI_QLST
         private string sdt;
         private DateTime ngaySinh;
 
+        //Hàm enable các butuon
         public void showButton(bool flag)
         {
             btnLuu.Enabled = btnHuy.Enabled = grbThongTin.Enabled = flag;
@@ -38,6 +41,7 @@ namespace GUI_QLST
 
         }
 
+        //Hàm xóa các textbox
         private void clearText()
         {
             txtID_NhanVien.Clear();
@@ -55,6 +59,7 @@ namespace GUI_QLST
             dtpNgaySinh.Value = DateTime.Now;
         }
 
+        //Load dữ liệu ngay khi chạy form
         private void frmNhanVien_Load(object sender, EventArgs e)
         {
             dtgvNhanVien.DataSource = bus_NhanVien.GetAllNhanVien();
@@ -62,16 +67,16 @@ namespace GUI_QLST
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            showButton(true);
-            lenh = ADD;
+            showButton(true);//xử lý các nút
+            lenh = ADD;//gửi lệnh thêm
 
-            clearText();
+            clearText();//và xóa các textbox
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
             showButton(true);
-            lenh = EDIT;
+            lenh = EDIT;//gửi lệnh sửa
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
@@ -87,6 +92,7 @@ namespace GUI_QLST
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
+            //Dialog xác nhận xóa hay ko
             DialogResult res = MessageBox.Show("Bạn có muốn xóa không?", "Xóa nhân viên", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (res == DialogResult.Yes)
             {
@@ -94,6 +100,7 @@ namespace GUI_QLST
                 {
                     id_NhanVien = Int32.Parse(txtID_NhanVien.Text);
                     hoTenNV = txtTenNV.Text;
+                    //kiểm tra radio button
                     if (rabNam.Checked)
                     {
                         gioiTinh = "Nam";
@@ -104,7 +111,7 @@ namespace GUI_QLST
                     }
                     diaChi = txtDiaChi.Text;
                     sdt = txtSDT.Text;
-                    ngaySinh = dtpNgaySinh.Value;
+                    ngaySinh = dtpNgaySinh.Value;//get ngày sinh
 
                     NhanVien_ET nhanVien = new NhanVien_ET(id_NhanVien, hoTenNV, gioiTinh, diaChi, sdt, ngaySinh);
                     if (bus_NhanVien.DeleteNhanVien(nhanVien) == true)
